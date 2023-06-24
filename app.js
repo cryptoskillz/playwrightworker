@@ -2,7 +2,9 @@ const express = require('express');
 const { chromium } = require('playwright');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+
 
 app.get('/', async (req, res) => {
   const browser = await chromium.launch();
